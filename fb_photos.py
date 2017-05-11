@@ -1,5 +1,3 @@
-#!/c/Python27/python
-
 import json
 import os
 import pickle
@@ -9,7 +7,7 @@ import urllib
 
 import facebook
 
-ID = 'CreativeIdeass'
+ID = 'KK'
 
 TOKEN = ''  # access token 
 SAFE_CHARS = '-_() abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
