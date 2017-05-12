@@ -160,8 +160,10 @@ class Model(object):
 
     
     def train(self, dataset, batch_size=16, nb_epoch=40, data_augmentation=True):
-        # let's train the model using SGD + momentum (how original).
-        sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+        #sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+        # use ADAM optimizer as it gave slightly better results
+        # TODO compare the same on big dataset
+
         adam = Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
         self.model.compile(loss='categorical_crossentropy',
                            optimizer=adam,
