@@ -1,4 +1,4 @@
-# fb_facedetection
+# FBFaceDetection
 Idea: Fetch photos from facebook and use it to train neural network to identify people
 
 What works
