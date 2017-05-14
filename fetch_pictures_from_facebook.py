@@ -4,6 +4,7 @@ import urllib.request
 
 ################################################################################
 
+
 def fetch_data(url, api_key):
     request = urllib.request.Request(url)
     # standard authorization for FB
@@ -17,6 +18,7 @@ def fetch_data(url, api_key):
     return data 
 
 ################################################################################
+
 
 def get_next_from_data(data):
     # check for paging key in the data
@@ -32,7 +34,8 @@ def get_next_from_data(data):
 
 ################################################################################
 
-def iterate_over_images(data, user_id, pic_number):
+
+def iterate_over_images(data, pic_number):
     for data_object in data:
         pic_url = data_object['source']
         f = open('{}.jpg'.format(pic_number), 'wb')
@@ -43,6 +46,7 @@ def iterate_over_images(data, user_id, pic_number):
 
 ################################################################################
 
+
 if __name__ == '__main__':
 
     # TODO for now support for 2.3 but upgrade to 2.9
@@ -51,22 +55,20 @@ if __name__ == '__main__':
 
     base_url = "https://graph.facebook.com/v2.3/"
 
-    facebook_access_token = 'EAACEdEose0cBACAxdIh7k5GKhLEnShg3BTRHu8R8EiJXw0ro4BO62NeKTIPQoDSWn1ejC1ZCqUmdMdY5zOtInGQS9ucy62QhA0BZBQuJmttWDBmBeeFcpJZBrUlkiFJ8WWZADe6ZBeV4YAlVFq5P3Qnp9irIZAYZAxEbyqz57keFPH5ZAVBCDGU0OoNatrINjlsZD'
+    facebook_access_token = 'EAACEdEose0cBADBgjcN1sD3zZCfx36J7ZCtjL2EYQrboaPc2RTQOr53kpkTee2DTu6RdLxThgdPG9i0g4lVgnp8AlS1afF9gip8Hsxrlx1peqDZBNnq7rRd5xDYr59VjinWVoUR6g3M8ueSZADRJfdb1vUcQZCCCjywgiSR1vJwhERQzjm5ZCrdUNXxAxYTOwZD'
 
-    if not os.path.exists("fb_pictures"):
-        os.makedirs("fb_pictures")
-    os.chdir("fb_pictures")
+    if not os.path.exists("data/user_pics"):
+        os.makedirs("data/user_pics")
+    os.chdir("data/user_pics")
 
     data = fetch_data(base_url+"me", facebook_access_token)
-
-    user_id = data['id']
 
     data = fetch_data(base_url+"me/photos", facebook_access_token)
     next_ = get_next_from_data(data)
 
     data = data['data']
     pic_num = 0
-    iterate_over_images(data, user_id, pic_num)
+    iterate_over_images(data, pic_num)
     pic_num += len(data)
 
     print(len(data))
@@ -81,7 +83,7 @@ if __name__ == '__main__':
         next_ = get_next_from_data(data)
 
         data = data['data']
-        iterate_over_images(data, user_id, pic_num)
+        iterate_over_images(data, pic_num)
 
         pic_num += len(data)
         print(len(data))

@@ -61,6 +61,6 @@ def read_image(file_path):
 def extract_data(path):
     images, labels = traverse_dir(path)
     images = np.array(images)
-    labels = np.array([0 if label.endswith('KK') else 1 for label in labels])
+    labels = np.array([0 if label.endswith('user_pics') else 1 for label in labels])
 
     return images, labels

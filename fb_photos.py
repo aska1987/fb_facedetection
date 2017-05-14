@@ -7,9 +7,9 @@ import urllib
 
 import facebook
 
-ID = 'KK'
+ID = 'kartikeya.karnatak'
 
-TOKEN = ''  # access token 
+TOKEN = 'EAACEdEose0cBACAxdIh7k5GKhLEnShg3BTRHu8R8EiJXw0ro4BO62NeKTIPQoDSWn1ejC1ZCqUmdMdY5zOtInGQS9ucy62QhA0BZBQuJmttWDBmBeeFcpJZBrUlkiFJ8WWZADe6ZBeV4YAlVFq5P3Qnp9irIZAYZAxEbyqz57keFPH5ZAVBCDGU0OoNatrINjlsZD'  # access token 
 SAFE_CHARS = '-_() abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
 def save(res, name='data'):
@@ -31,7 +31,7 @@ def fetch(limit=1000, depth=10, last=None, id=ID, token=TOKEN):
     
     if not last:
         args = {'fields': ['source','name'], 'limit': limit}
-        res = graph.request('%s/photos/uploaded' % id, args)
+        res = graph.request('%s/photos/uploaded' % token, args)
         process(lst, res['data'])
     else:
         res = {'paging': {'next': last}}
@@ -65,9 +65,9 @@ def process(res, dat):
             name = src[src.rfind('/')+1:]
         res.append({'name': name, 'src': src})
     if err:
-        print '%d errors.' % len(err)
-        print err
-    print '%d photos found.' % len(dat)
+        print ('%d errors.' % len(err) )
+        print( err)
+    print( '%d photos found.' % len(dat))
 
 def download(res):
     """Download the list of files"""
@@ -79,7 +79,7 @@ def download(res):
         # try to get a higher resolution of the photo
         p['src'] = p['src'].replace('_s', '_n')
         urllib.urlretrieve(p['src'], p['name'])
-    print "Downloaded %s pictures in %.3f sec." % (len(res), time.clock()-start)
+    print( "Downloaded %s pictures in %.3f sec." % (len(res), time.clock()-start))
 
 if __name__ == '__main__':
     # download 500 photos, fetch details about 100 at a time
