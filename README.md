@@ -16,7 +16,7 @@ What works
 On-going / Future work:
 ------------------------
 
-* The project is under NOT completed and the whole idea to integrate FB to the face recognition part is in basic stage.
+* The project is NOT completed and the whole idea to integrate FB to the face recognition part is in basic stage.
 * I need to test the network with massive dataset and check on the accuracy.
 * I want to explore FACENET network and probably use it to increase the efficiency.
 * I want to extent this to google or epson glasses.
