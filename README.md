@@ -20,3 +20,10 @@ On-going / Future work:
 * I need to test the network with massive dataset and check on the accuracy.
 * I want to explore FACENET network and probably use it to increase the efficiency.
 * I want to extent this to google or epson glasses.
+
+
+Model accuracy and loss graphs
+-------------------------------
+
+![Alt text](https://github.com/kkarnatak/fb_facedetection/blob/master/store/graphs/model_acc.png?raw=true "Model Accuracy")
+![Alt text](https://github.com/kkarnatak/fb_facedetection/blob/master/store/graphs/model_loss.png?raw=true "Model Loss")
