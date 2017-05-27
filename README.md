@@ -11,7 +11,7 @@ What works
 * AFLW dataset is used to differentiate between the user and other people ( Due to hardware limitation only few pictures from the AFLW dataset were used at the moment) https://lrs.icg.tugraz.at/research/aflw/
 * The training uses simple network to learn the features
 * Prediction simply marks the test image as of the user or other random people.
-* The current recognition results are around 80% accuracy. Low availability of user pictures (i.e. myself :) ) and lack of hardware ( AFLW dataset is massive and need lot of disk and GPU access), thus couldn't train the network well.
+* The current recognition results are around 93% accuracy. Low availability of user pictures (i.e. myself :) ) and lack of hardware ( AFLW dataset is massive and need lot of disk and GPU access), thus couldn't train the network well.
 
 On-going / Future work:
 ------------------------
