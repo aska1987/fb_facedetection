@@ -27,3 +27,9 @@ Model accuracy and loss graphs
 
 ![Alt text](https://github.com/kkarnatak/fb_facedetection/blob/master/store/graphs/model_acc.png?raw=true "Model Accuracy")
 ![Alt text](https://github.com/kkarnatak/fb_facedetection/blob/master/store/graphs/model_loss.png?raw=true "Model Loss")
+
+
+The model accuracy increased to 94% when the face was cropped from the given images. I ran facedetection on the images, cropped them and enabled usual data augmentation provided within keras framework. The graphs are as below:
+
+![Alt text](https://github.com/kkarnatak/fb_facedetection/blob/master/store/graphs/model_acc_crop.png?raw=true "Model Accuracy")
+![Alt text](https://github.com/kkarnatak/fb_facedetection/blob/master/store/graphs/model_loss_crop.png?raw=true "Model Loss")
